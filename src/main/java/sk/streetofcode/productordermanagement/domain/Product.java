@@ -1,20 +1,18 @@
 package sk.streetofcode.productordermanagement.domain;
 
-import java.math.BigDecimal;
-
 public class Product {
 
   private final long id;
 
-  private String name;
+  private final String name;
 
-  private String description;
+  private final String description;
 
-  private int amount;
+  private final int amount;
 
-  private BigDecimal price;
+  private final double price;
 
-  public Product(long id, String name, String description, int amount, BigDecimal price) {
+  public Product(long id, String name, String description, int amount, double price) {
     this.id = id;
     this.name = name;
     this.description = description;
@@ -38,7 +36,7 @@ public class Product {
     return amount;
   }
 
-  public BigDecimal getPrice() {
+  public double getPrice() {
     return price;
   }
 }
