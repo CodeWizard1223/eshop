@@ -20,7 +20,7 @@ public interface ProductService {
 
   ProductAmountResponse addAmount(long id, ProductAmountRequest request);
 
-  ProductResponse changeProduct(long id, UpdateProductRequest request);
+  ProductResponse updateProduct(long id, UpdateProductRequest request);
 
   void delete(long id);
 
