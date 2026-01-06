@@ -5,12 +5,13 @@ import sk.streetofcode.productordermanagement.api.request.ProductAmountRequest;
 import sk.streetofcode.productordermanagement.api.request.UpdateProductRequest;
 import sk.streetofcode.productordermanagement.api.response.ProductAmountResponse;
 import sk.streetofcode.productordermanagement.api.response.ProductResponse;
+import sk.streetofcode.productordermanagement.domain.Product;
 
 import java.util.List;
 
 public interface ProductService {
 
-  List<ProductResponse> getAll();
+  List<Product> getAll();
 
   ProductResponse getById(long id);
 
