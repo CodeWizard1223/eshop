@@ -1,4 +1,4 @@
-CREATE TABLE product (
+CREATE TABLE IF NOT EXISTS product (
     id BIGINT NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     price DECIMAL(10,2) NOT NULL,
@@ -6,13 +6,13 @@ CREATE TABLE product (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE orders (
+CREATE TABLE IF NOT EXISTS orders (
     id BIGINT NOT NULL AUTO_INCREMENT,
     paid BOOLEAN NOT NULL,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE order_item (
+CREATE TABLE IF NOT EXISTS order_item (
     order_id BIGINT NOT NULL,
     product_id BIGINT NOT NULL,
     amount INT NOT NULL,
