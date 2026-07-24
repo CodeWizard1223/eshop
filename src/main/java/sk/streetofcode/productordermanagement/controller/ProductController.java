@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sk.streetofcode.productordermanagement.api.ProductService;
+import sk.streetofcode.productordermanagement.api.response.ProductAmountResponse;
 import sk.streetofcode.productordermanagement.api.response.ProductResponse;
 import sk.streetofcode.productordermanagement.domain.Product;
 
@@ -36,5 +37,15 @@ public class ProductController {
   })
   public ResponseEntity<ProductResponse> getById(@PathVariable("id") long id) {
     return ResponseEntity.ok().body(productService.getById(id));
+  }
+
+  @GetMapping("{id}/amount")
+  @ApiResponses(value = {
+      @ApiResponse(responseCode = "200", description = "User found"),
+      @ApiResponse(responseCode = "404", description = "User not found"),
+      @ApiResponse(responseCode = "500", description = "Internal server error")
+  })
+  public ResponseEntity<ProductAmountResponse> getAmount(@PathVariable("id") long id) {
+    return ResponseEntity.ok().body(productService.getAmount(id));
   }
 }

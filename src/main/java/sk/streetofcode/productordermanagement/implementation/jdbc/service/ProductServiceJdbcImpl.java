@@ -34,7 +34,8 @@ public class ProductServiceJdbcImpl implements ProductService {
 
   @Override
   public ProductAmountResponse getAmount(long id) {
-    return null;
+    Integer amount = productJdbcRepository.getAmount(id);
+    return new ProductAmountResponse(amount);
   }
 
   @Override
